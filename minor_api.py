@@ -3,8 +3,9 @@ import tensorflow as tf
 from tensorflow.keras.preprocessing.image import img_to_array
 from tensorflow.keras.preprocessing.image import load_img
 from tensorflow import keras
-from PIL import Image
+#from PIL import Image
 import numpy as np
+from flask import *
 
 app = Flask(__name__)
 
@@ -16,7 +17,7 @@ def fun():
 def fun2():
     file = request.files['fileToUpload']
     if file.filename == '':
-            flash('No selected file')
+            #flash('No selected file')
             return redirect(url_for('fun'))
     file.filename = "kapil.jpg"
     file.save(file.filename)
